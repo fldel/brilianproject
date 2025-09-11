@@ -17,7 +17,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     Route::get('/dashboard', function () {
         return view('admin.dashboard');
-    })->middleware('auth:organizers')->name('dashboard');
+    })->middleware(['auth:organizers','verified'])->name('dashboard');
 
     Route::middleware('auth:organizers')->group(function () {
         Route::get('verify-email', AdminEmailVerificationPromptController::class)

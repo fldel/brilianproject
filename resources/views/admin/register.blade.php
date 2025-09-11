@@ -1,5 +1,5 @@
 <x-admin-layout>
-    <form method="POST" action="{{ route('register') }}">
+    <form method="POST" action="{{ route('admin.register.store') }}">
         @csrf
 
         <!-- Name -->
@@ -43,7 +43,7 @@
             <x-pixel-button class="text-white">
                 {{ __('Register') }}
             </x-pixel-button>
-            <a class="text-sm text-black underline rounded-md hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
+            <a class="text-sm text-black underline rounded-md hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('admin.login') }}">
                     {{ __('Already registered?') }}
             </a>
         </div>

@@ -7,6 +7,7 @@ use App\Models\Organizer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Auth\Events\Registered;
 
 class AdminRegisteredUserController extends Controller
 {
@@ -32,6 +33,10 @@ class AdminRegisteredUserController extends Controller
         // login dengan guard organizers, bukan web
         Auth::guard('organizers')->login($organizer);
 
-        return redirect()->route('admin.dashboard');
+        // trigger email verification notification like user flow
+        event(new Registered($organizer));
+
+        // send them to the verification notice page
+        return redirect()->route('admin.verification.notice');
     }
 }
