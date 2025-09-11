@@ -36,7 +36,7 @@
                 <!-- Background Video -->
                 <video autoplay muted loop playsinline 
                     class="absolute inset-0 object-cover w-full h-full">
-                    <source src="/videos/bgloginuser.mp4" type="video/mp4">
+                    <source src="/videos/bgloginadmin.mp4" type="video/mp4">
                 </video>
 
                 <!-- Overlay -->
@@ -46,7 +46,7 @@
                 <div class="relative z-10">
                     <p class="text-[30px]">You can easily</p>
                     <h2 class="leading-[0.7] mt-2 text-[60px]">
-                        Find your future<br>education here
+                        Help their future<br>education here
                     </h2>
                 </div>
 

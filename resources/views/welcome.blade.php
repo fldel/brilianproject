@@ -2,9 +2,13 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="{{ asset('img/brilian.png') }}" type="image/png"></link>    
     <title>Brilian</title>
     @vite('resources/css/app.css')
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
         /* Fullscreen video background */
@@ -18,7 +22,7 @@
             z-index: -1; /* biar di belakang konten */
         }
 
-                /* Glass effect footer */
+        /* Glass effect footer */
         .glass {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(12px) saturate(180%);
@@ -35,10 +39,10 @@
             width: 100%;
             height: 100%;
             background: url("https://grainy-gradients.vercel.app/noise.svg");
-            opacity: 0.40; /* atur transparansi */
-            mix-blend-mode: overlay; /* biar nyatu sama video */
-            pointer-events: none; /* biar gak ganggu klik */
-            z-index: 0; /* pas di atas video, di bawah konten */
+            opacity: 0.40;
+            mix-blend-mode: overlay;
+            pointer-events: none;
+            z-index: 0;
         }
 
         /* Black Overlay */
@@ -48,11 +52,16 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5); /* 50% hitam */
-            z-index: 0; /* di atas video, di bawah konten */
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 0;
         }
 
-    </style>
+        /* Gradient transition ke putih */
+        .gradient-transition {
+            height: 100px;
+            background: linear-gradient(to bottom, transparent, white);
+        }   
+ </style>
 </head>
 <body class="flex flex-col min-h-screen text-gray-900">
 
@@ -65,7 +74,7 @@
     <div class="black-overlay"></div>
     
     <!-- Header -->
-    <header class="relative z-10 flex items-center justify-between px-8 py-4">
+    <header class="relative z-10 flex items-center justify-between px-8 py-4" data-aos="fade-down">
         <div class="flex items-center space-x-2">
             <x-application-logo></x-application-logo>
             <p class="text-white font-cave text-[30px]">BRILIAN</p>
@@ -96,21 +105,196 @@
     </header>
 
     <!-- Hero Section -->
-    <main class="relative z-10 flex flex-col items-center justify-center flex-1 px-4 text-center">
-        <p class="text-[36px] font-cave text-white/70">START YOUR</p>
-        <h1 class="leading-[0.7] text-white tont-caveracking-wider font-cave text-[210px] drop-shadow">
+    <main class="relative z-10 flex flex-col items-center justify-center px-4 text-center pt-24 pb-32">
+        <p class="text-[28px] sm:text-[32px] font-cave text-white/70 mb-2">START YOUR</p>
+        
+        <h1 class="leading-[0.8] text-white tracking-wider font-cave text-[120px] sm:text-[160px] md:text-[200px] drop-shadow">
             Scholarship <br> Adventure
         </h1> 
-        <p class="text-[36px] font-cave text-white/70">Find your way easier find your dream scholarship</p>
+        
+        <p class="text-[0px] sm:text-[30px] font-cave text-white/70 mt-4">
+            Find your way easier, find your dream scholarship
+        </p>
     </main>
 
     <!-- Footer -->
-    <footer class="relative flex justify-center w-full pb-6">
+    <footer class="relative flex justify-center w-full pb-6 z-10 mb-10 mt-14">
         <div class="flex items-center justify-between w-[90%] max-w-4xl px-6 py-4 text-sm font-medium text-white glass">
             <span>@2025 – All rights reserved</span>
             <span>created by fidelina affectine sweat</span>
         </div>
     </footer>
+
+    <!-- Gradient ke konten -->
+    <div class="relative w-full gradient-transition"></div>
+
+    <!-- Section 1 -->
+    <section class="relative w-full bg-white py-20 px-6 text-center">
+        <h2 class="leading-[0.9] text-[50px] font-cave mb-4" data-aos="fade-up">
+            Journey through the world of education
+        </h2>
+        
+        <p class="text-[30px] font-cave text-gray-500 mb-10 mx-auto" data-aos="fade-up" data-aos-delay="200">
+            Look for your future education with simple, fun, cost-friendly education and organizer.
+        </p>
+        
+        <div class="flex justify-center" data-aos="zoom-in" data-aos-delay="400">
+            <img src="{{ asset('img/scholarship.jpg') }}" 
+                class="rounded-lg shadow-lg w-[1200px] h-[600px] object-cover border-2 border-black">
+        </div>
+    </section>
+
+<section class="relative w-full bg-white py-10">
+  <div class="max-w-2xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6" data-aos="fade-up" data-aos-delay="200">
+    
+    <div class="flex flex-col items-center">
+      <video autoplay muted loop playsinline class="w-[100px] h-[100px] object-cover">
+        <source src="{{ asset('videos/duck.mp4') }}" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="flex flex-col items-center">
+      <video autoplay muted loop playsinline class="w-[100px] h-[100px] object-cover">
+        <source src="{{ asset('videos/duck.mp4') }}" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="flex flex-col items-center">
+      <video autoplay muted loop playsinline class="w-[100px] h-[100px] object-cover">
+        <source src="{{ asset('videos/duck.mp4') }}" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="flex flex-col items-center">
+      <video autoplay muted loop playsinline class="w-[100px] h-[100px] object-cover">
+        <source src="{{ asset('videos/duck.mp4') }}" type="video/mp4">
+      </video>
+    </div>
+
+  </div>
+</section>
+
+    <!-- Find Your Scholarship -->
+    <section class="relative w-full bg-white py-20 px-6"">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-20" data-aos="fade-right">
+            <div class="flex-shrink-0">
+                <video autoplay muted loop playsinline class="rounded-lg shadow-lg w-[600px] h-[400px] object-cover border-2 border-black">
+                    <source src="{{ asset('videos/gif1.mp4') }}" type="video/mp4" >
+                </video>                 
+            </div>
+            <div class="text-center md:text-left">
+                <h3 class="text-[50px] font-cave mb-4">Find Your Scholarship</h3>
+                <p class="text-[30px] font-cave text-gray-500 max-w-md">
+                    Find easily scholarship that used to confused you, but 
+                    now you can easily just find them here.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Look at the Details -->
+    <section class="relative w-full bg-white py-20 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-20" data-aos="fade-left">
+            <div class="text-center md:text-left">
+                <h3 class="text-[50px] font-cave mb-4">Look at the Details</h3>
+                <p class="text-[30px] font-cave text-gray-500 max-w-md">
+                    After you found the right scholarship for you,
+                    you can look at the details of the scholarship
+                    to make sure it's the right one.
+                </p>
+            </div>
+            <div class="flex-shrink-0">
+                <video autoplay muted loop playsinline class="rounded-lg shadow-lg w-[600px] h-[400px] object-cover border-2 border-black">
+                    <source src="{{ asset('videos/gif2.mp4') }}" type="video/mp4" >
+                </video>                 
+            </div>
+        </div>
+    </section>
+
+    <!-- Apply the Scholarship -->
+    <section class="relative w-full bg-white py-20 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-20" data-aos="fade-right">
+            <div class="flex-shrink-0">
+                <video autoplay muted loop playsinline class="rounded-lg shadow-lg w-[600px] h-[400px] object-cover border-2 border-black">
+                    <source src="{{ asset('videos/gif3.mp4') }}" type="video/mp4" >
+                </video>                 
+            </div>
+            <div class="text-center md:text-left">
+                <h3 class="text-[50px] font-cave mb-4">Apply the Scholarship!</h3>
+                <p class="text-[30px] font-cave text-gray-500 max-w-md">
+                    After you look at the details and you think it's the right one,
+                    you can apply directly to the scholarship provider. Congratulations! 
+                </p>
+            </div>
+        </div>
+    </section>
+
+<!-- Fun Section dengan BG Video -->
+<section class="relative w-full h-[600px] flex flex-col items-center justify-center text-center text-white overflow-hidden">
+    <!-- Background video -->
+    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+        <source src="{{ asset('videos/footer.mp4') }}" type="video/mp4">
+    </video>
+
+    <!-- Overlay hitam biar teks jelas -->
+    <div class="absolute inset-0 bg-black/50"></div>
+
+    <!-- Gradient putih dari atas -->
+    <div class="absolute top-0 left-0 w-full h-[100px] bg-gradient-to-b from-white to-transparent"></div>
+
+    <!-- Konten -->
+    <div class="relative z-10 flex flex-col items-center space-y-10">
+    <!-- 3 koin + teks -->
+    <div class="flex flex-wrap justify-center gap-10">
+        <div class="flex items-center space-x-3">
+            <img src="{{ asset('img/coin.gif') }}" class="w-[50px] h-[50px]">
+            <span class="text-[24px] font-cave">#Cool Web</span>
+        </div>
+        <div class="flex items-center space-x-3">
+            <img src="{{ asset('img/coin.gif') }}" class="w-[50px] h-[50px]">
+            <span class="text-[24px] font-cave">#Freshie</span>
+        </div>
+        <div class="flex items-center space-x-3">
+            <img src="{{ asset('img/coin.gif') }}" class="w-[50px] h-[50px]">
+            <span class="text-[24px] font-cave">#Free</span>
+        </div>
+    </div>
+
+        <!-- Teks besar -->
+        <h2 class="text-[100px] sm:text-[60px] md:text-[100px] font-cave drop-shadow-lg">
+        <span id="typed-text"></span>
+        </h2>
+    </div>
+</section>
+    
+
+ @include('layouts.footer')
+
+    <!-- Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+      AOS.init({
+        duration: 1200,
+        once: true
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+    new Typed("#typed-text", {
+      strings: [
+        "Ready to have some fun?",
+        "Ready to find your future?"
+      ],
+      typeSpeed: 70,      // kecepatan ngetik
+      backSpeed: 50,      // kecepatan hapus
+      backDelay: 2000,    // jeda sebelum hapus
+      startDelay: 500,    // jeda awal
+      loop: true          // biar muter terus
+        });
+    });
+    </script>
+
+
 
 </body>
 </html>

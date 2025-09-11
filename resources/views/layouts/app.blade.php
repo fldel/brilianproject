@@ -15,9 +15,26 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 16px;
         }
+
+        @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+        }
+
+        .animate-scroll {
+        display: flex;
+        animation: scroll 25s linear infinite;
+        width: max-content;
+        }
+
+        .animate-scroll-slow {
+        animation: scroll 50s linear infinite !important;
+        }
+
         </style>
 
-        <!-- Scripts -->
+    <!-- Script carousel dihapus, gunakan script di komponen scholarship-carousel saja -->
+
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans antialiased">

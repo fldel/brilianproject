@@ -40,6 +40,10 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'organizers' => [
+            'driver' => 'session',
+            'provider' => 'organizers',
+        ],
     ],
 
     /*
@@ -65,10 +69,10 @@ return [
             'model' => env('AUTH_MODEL', App\Models\User::class),
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'organizers' => [
+            'driver' => 'eloquent',
+            'model' => env('AUTH_ORGANIZER_MODEL', App\Models\Organizer::class),
+        ],
     ],
 
     /*
@@ -97,6 +101,12 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
+        'organizers' => [   // 👈 reset password untuk admin/organizer
+            'provider' => 'organizers',
+            'table' => 'password_reset_tokens',
+            'expire' => 60,
+            'throttle' => 60,
+        ]
     ],
 
     /*

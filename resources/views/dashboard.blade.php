@@ -43,7 +43,7 @@
                     </select>
 
                     <!-- Search Button -->
-                    <button class="h-[50px] w-full sm:w-[54px] flex items-center justify-center text-white 
+                    <button class="border-brand-dark border-2 h-[50px] w-full sm:w-[54px] flex items-center justify-center text-white 
                                    transition bg-blue-600 rounded-full hover:bg-blue-700">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" 
                             fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -58,18 +58,11 @@
         </div>
 
     <!-- Gradient Putih di atas konten -->
-    <div class="relative z-10 w-full h-16 bg-gradient-to-t from-white to-transparent"></div>
+<div class="relative z-10  w-full h-20 bg-gradient-to-t from-white to-transparent"></div>
     
+        <!-- Area kosong diisi putih -->
+        <div class="w-full h-2 bg-white"></div>
         <!-- Section berikutnya (biar bisa scroll) -->
-        <div class="relative z-10 w-full bg-white">
-            <div class="max-w-6xl px-6 py-32 mx-auto">
-                <h2 class="text-4xl font-bold text-gray-800">Content Section</h2>
-                <p class="mt-6 text-lg text-gray-600">
-                    Tambahin konten di sini biar bisa discroll ke bawah. 
-                    Misalnya daftar beasiswa, artikel, dll.
-                </p>
-            </div>
-        </div>
 
     </div>
 </x-app-layout>

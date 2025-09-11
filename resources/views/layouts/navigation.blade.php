@@ -1,7 +1,7 @@
 <nav x-data="{ open: false }" 
     class="fixed z-20 h-[80px] shadow-lg glass 
            top-6 left-1/2 transform -translate-x-1/2 
-           w-[90%] max-w-[1800px] rounded-2xl px-6">
+           w-[90%] max-w-[1800px] rounded-2xl px-6 ">
 
     <!-- Primary Navigation Menu -->
     <div class="flex items-center justify-between h-full">
@@ -10,7 +10,7 @@
         <div class="flex items-center space-x-3">
             <a href="{{ route('dashboard') }}" class="flex items-center space-x-2">
                 <x-application-logo class="block w-8 h-8 text-gray-800" />
-                <span class="text-[30px] font-cave text-white">BRILIAN</span>
+                <span class=" text-[30px] font-cave text-white">BRILIAN</span>
             </a>
         </div>
 
