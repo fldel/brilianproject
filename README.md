@@ -64,7 +64,7 @@ php artisan migrate --seed
 php artisan serve
 ```
 
-App will be available at:  
+Link (Not Available right now)
 👉 **http://brilianproject.test**
 
 ---
