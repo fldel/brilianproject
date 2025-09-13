@@ -4,7 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <link rel="icon" href="{{ asset('img/brilian.png') }}" type="image/png"></link>
+        <link rel="icon" href="{{ asset('img/brilianwhite.png') }}" type="image/png"></link>
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        
         <title>Brilian</title>
 
         <style>
@@ -33,7 +35,14 @@
 
         </style>
 
-    <!-- Script carousel dihapus, gunakan script di komponen scholarship-carousel saja -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+        AOS.init({
+            duration: 1200, // durasi animasi
+            once: true,     // animasi hanya sekali saat scroll
+            offset: 100,    // jarak trigger animasi
+        });
+        </script>
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
