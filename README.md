@@ -16,7 +16,7 @@ With a modern and responsive design, Brilian helps **students, parents, and educ
 ---
 
 ## 🛠️ Tech Stack
-- **Backend**: Laravel 10, PHP 8.2  
+- **Backend**: Laravel 12, PHP
 - **Frontend**: Tailwind CSS  
 - **Database**: MySQL  
 - **Version Control**: Git & GitHub  
