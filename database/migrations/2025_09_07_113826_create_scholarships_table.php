@@ -1,4 +1,4 @@
-```<?php
+<?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -15,9 +15,6 @@ return new class extends Migration {
             $table->string('name');
             $table->enum('category', ['d1', 'd2', 'd3', 'd4', 's1', 's2', 's3', 'sma/smk']);
             $table->text('description');
-            $table->text('qualification');
-            $table->text('admission_guidance');
-            $table->text('benefits');
             $table->string('image')->nullable();
             $table->string('link')->nullable();
             $table->boolean('is_available')->default(true);

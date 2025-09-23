@@ -17,6 +17,14 @@ Route::get('/about', function() {
     return view('about');
 })->name('about');
 
+Route::get('/bookmark', function() {
+    return view('bookmark');
+})->name('bookmark');
+
+Route::get('/tips', function() {
+    return view('tips');
+})->name('tips');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
