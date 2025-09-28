@@ -1,3 +1,3 @@
 <div>
-    <img src="{{ asset('img/brilian.png') }}" class="h-20">
+    <img src="{{ asset('img/brilianblack.png') }}" class="h-20">
 </div>

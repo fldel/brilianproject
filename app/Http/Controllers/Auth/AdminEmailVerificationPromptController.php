@@ -12,7 +12,7 @@ class AdminEmailVerificationPromptController extends Controller
     public function __invoke(Request $request): RedirectResponse|View
     {
         return $request->user('organizers')->hasVerifiedEmail()
-            ? redirect()->intended(route('admin.dashboard'))
-            : view('admin.verify-email'); // bikin blade khusus admin
+            ? redirect()->route('admin.dashboard')
+            : view('admin.verify-email');
     }
 }

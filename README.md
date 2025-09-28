@@ -16,7 +16,7 @@ With a modern and responsive design, Brilian helps **students, parents, and educ
 ---
 
 ## 🛠️ Tech Stack
-- **Backend**: Laravel 10, PHP 8.2  
+- **Backend**: Laravel 12, PHP
 - **Frontend**: Tailwind CSS  
 - **Database**: MySQL  
 - **Version Control**: Git & GitHub  
@@ -49,7 +49,7 @@ Edit `.env` with your database configuration:
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=brilian_db
+DB_DATABASE=brilian
 DB_USERNAME=root
 DB_PASSWORD=
 ```
@@ -64,7 +64,7 @@ php artisan migrate --seed
 php artisan serve
 ```
 
-App will be available at:  
+Link (Not Available right now)
 👉 **http://brilianproject.test**
 
 ---
@@ -133,7 +133,7 @@ We welcome contributions!
 ---
 
 ## 📜 License
-This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.  
+This project is licensed under Brilian Team.
 
 ---
 
@@ -144,9 +144,6 @@ This project is licensed under the **MIT License** – see the [LICENSE](LICENSE
 
 ---
 
-## 📌 Project Status
-🚧 Development in progress  
-- 🎨 High Fidelity Design → September 20, 2025  
-- 💻 Frontend Development → September 20, 2025  
-- ⚙️ Backend Development → October 20, 2025  
-- 🤖 AI Agent Integration → November 20, 2025  
+## 📌 Contact & Support
+- **Email:** fldelve89@gmail.com
+- **Website:** brilian.com (not hosted yet)

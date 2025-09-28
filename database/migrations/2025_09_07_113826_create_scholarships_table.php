@@ -1,4 +1,4 @@
-```<?php
+<?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -12,14 +12,18 @@ return new class extends Migration {
     {
         Schema::create('scholarships', function (Blueprint $table) {
             $table->id();
-            $table->string('name'); // Nama beasiswa
-            $table->text('description'); // Deskripsi beasiswa
-            $table->string('image')->nullable(); // path/URL gambar
-            $table->string('link')->nullable(); // link ke website pendaftaran
-            $table->boolean('is_available')->default(true); // status tersedia
-            $table->foreignId('organizer_id')->nullable()->constrained('organizers'); // relasi ke organizer
-            $table->timestamp('starts_at')->useCurrent(); // tanggal mulai
-            $table->timestamp('ends_at')->nullable(); // tanggal akhir
+            $table->string('name');
+            $table->enum('category', ['d1', 'd2', 'd3', 'd4', 's1', 's2', 's3', 'sma/smk']);
+            $table->text('description');
+            $table->text('qualification');
+            $table->text('admission_guidance');
+            $table->text('benefits');
+            $table->string('image')->nullable();
+            $table->string('link')->nullable();
+            $table->boolean('is_available')->default(true);
+            $table->foreignId('organizer_id')->nullable()->constrained('organizers');
+            $table->timestamp('starts_at')->useCurrent();
+            $table->timestamp('ends_at')->nullable();
             $table->timestamps();
         });
     }
