@@ -22,12 +22,20 @@
         <label>Deskripsi:</label><br>
         <textarea name="description" required></textarea><br><br>
 
+    <div id="category-wrapper">
+        <div class="category-select">
         <label>Kategori:</label><br>
-        @foreach($categories as $category)
-            <input type="checkbox" name="categories[]" value="{{ $category->id }}">
-            {{ $category->name }} <br>
-        @endforeach
+            <select name="categories[]" class="form-control" style="min-width:200px; height:40px;">
+                @foreach ($categories as $category)
+                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                @endforeach
+            </select>
         <br>
+        </div>
+    </div>
+    <br>
+    <button type="button" onclick="addCategory()">+ Tambah Kategori</button>
+    <br>
 
         <label>Gambar:</label><br>
         <input type="file" name="image" accept="image/*"><br><br>
@@ -46,5 +54,13 @@
 
         <button type="submit">Simpan</button>
     </form>
+
+<script>
+function addCategory() {
+    let wrapper = document.getElementById("category-wrapper");
+    let newSelect = document.querySelector(".category-select").cloneNode(true);
+    wrapper.appendChild(newSelect);
+}
+</script>
 </body>
 </html>
