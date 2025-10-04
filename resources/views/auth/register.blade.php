@@ -1,6 +1,10 @@
 <x-guest-layout>
+    <div class="mb-6 text-xl font-bold text-center text-black">
+        {{ __('Register as') }} {{ ucfirst($role ?? request('role', 'user')) }}
+    </div>
     <form method="POST" action="{{ route('register') }}">
         @csrf
+        <input type="hidden" name="role" value="{{ $role ?? request('role', 'user') }}" />
 
         <!-- Name -->
         <div>

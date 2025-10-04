@@ -17,7 +17,7 @@ return new class extends Migration {
             $table->string('image')->nullable();
             $table->string('link')->nullable();
             $table->boolean('is_available')->default(true);
-            $table->foreignId('organizer_id')->nullable()->constrained('organizers');
+            $table->foreignId('user_id')->nullable()->constrained('users');
             $table->timestamp('starts_at')->useCurrent();
             $table->timestamp('ends_at')->nullable();
             $table->timestamps();

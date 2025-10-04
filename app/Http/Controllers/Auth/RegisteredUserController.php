@@ -17,9 +17,13 @@ class RegisteredUserController extends Controller
     /**
      * Display the registration view.
      */
-    public function create(): View
+    public function create(Request $request): View
     {
-        return view('auth.register');
+        $role = $request->query('role', 'user');
+        if (!in_array($role, ['user', 'admin'])) {
+            $role = 'user';
+        }
+        return view('auth.register', compact('role'));
     }
 
     /**
@@ -33,18 +37,21 @@ class RegisteredUserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'role' => ['required', 'in:user,admin'],
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'role' => $request->role,
         ]);
 
         event(new Registered($user));
 
         Auth::login($user);
 
-        return redirect(route('dashboard', absolute: false));
+        // Force email verification flow; Laravel will show the notice route
+        return redirect()->route('verification.notice');
     }
 }

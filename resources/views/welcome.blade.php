@@ -99,7 +99,7 @@
 
                     @if (Route::has('register'))
                         <x-pixel-button main-color="#4CAF50" shadow-color="#2E7D32" class="text-white"
-                            onclick="window.location.href='{{ route('register') }}'">
+                            onclick="window.location.href='{{ url('/choose-role') }}'">
                             Register
                         </x-pixel-button>
                     @endif

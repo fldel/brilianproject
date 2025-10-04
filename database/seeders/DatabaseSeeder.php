@@ -22,9 +22,15 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'email' => 'test@example.com',
             'password' => Hash::make('password'),
+            'role' => 'user',
         ]);
 
-        // Seed organizer/admin with hashed password as an example
-        $this->call(OrganizerSeeder::class);
+        // Example admin account using the same users table
+        User::factory()->create([
+            'name' => 'Admin',
+            'email' => 'admin@example.com',
+            'password' => Hash::make('password'),
+            'role' => 'admin',
+        ]);
     }
 }

@@ -41,6 +41,9 @@
                     {{ __('Forgot your password?') }}
                 </a>
             @endif
+            <a class="text-sm text-black underline rounded-md hover:text-brand-default focus:outline-none focus:text-brand-dark" href="{{ url('/choose-role') }}">
+                {{ __('Register') }}
+            </a>
         </div>
     </form>
 </x-guest-layout>

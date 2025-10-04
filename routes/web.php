@@ -9,10 +9,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// ---------------- Role chooser ---------------- //
+Route::get('/choose-role', function () {
+    return view('auth.choose-role');
+})->middleware('guest')->name('choose-role');
+
 // ---------------- USER ---------------- //
 Route::get('/dashboard', [DashboardController::class, 'index'])
-    ->middleware(['auth', 'verified'])
+    ->middleware(['auth', 'verified', 'role.user'])
     ->name('dashboard');
+
+// ---------------- ADMIN ---------------- //
+Route::get('/admin/dashboard', function () {
+    return view('admin.dashboard');
+})->middleware(['auth','verified','admin'])->name('admin.dashboard');
 
 Route::get('/about', function() {
     return view('about');
@@ -36,4 +46,3 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
-require __DIR__.'/admin_auth.php';

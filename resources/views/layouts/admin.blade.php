@@ -14,18 +14,6 @@
         </style>
     </head>
 <body class="font-sans antialiased text-brand-default">
-    <!-- Tombol Switch Admin -->
-        <div class="absolute text-black top-4 right-4">
-        <a href="{{ route('admin.login') }}">
-            <x-pixel-button 
-                mainColor="#D9D9D9" 
-                hoverColor="#ADA7A7"
-                shadowColor="#3F3F3F" 
-                borderColor="#191919">
-                {{ __('Switch to Admin') }}
-            </x-pixel-button>
-        </a>
-        </div>
     
     <div class="flex items-center justify-center min-h-screen bg-gray-100">
         <div class="border-2 border-black/30 w-full max-w-4xl min-h-[550px] bg-white rounded-2xl shadow-lg overflow-hidden grid grid-cols-1 md:grid-cols-2">
